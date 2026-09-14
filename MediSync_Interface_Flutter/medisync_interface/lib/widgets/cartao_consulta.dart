@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CartaoConsulta extends StatelessWidget {
   final String especialidade;
   final String profissional;
-  final String data;
+  final String datas;
   final String horario;
   final IconData icone;
 
@@ -11,7 +11,7 @@ class CartaoConsulta extends StatelessWidget {
     super.key,
     required this.especialidade,
     required this.profissional,
-    required this.data,
+    required this.datas,
     required this.horario,
     required this.icone,
   });
