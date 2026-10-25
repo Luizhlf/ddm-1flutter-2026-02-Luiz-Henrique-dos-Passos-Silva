@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import '../models/ponto_turistico.dart';
-import '../widgets/card_turistico.dart';
+import 'models/ponto_turistico.dart';
+import 'widgets/card_turistico.dart';
 
 class TelaTurismo extends StatefulWidget {
   const TelaTurismo({super.key});
@@ -56,6 +56,18 @@ class _TelaTurismoState extends State<TelaTurismo> {
     ),
   ];
 
+  void alterarFavorito(int index, bool valor) {
+    setState(() {
+      pontos[index].favorito = valor;
+    });
+  }
+
+  void alterarVisitado(int index, bool valor) {
+    setState(() {
+      pontos[index].visitado = valor;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +82,12 @@ class _TelaTurismoState extends State<TelaTurismo> {
         itemBuilder: (context, index) {
           return CardTuristico(
             ponto: pontos[index],
+            onFavorito: (valor) {
+              alterarFavorito(index, valor);
+            },
+            onVisitado: (valor) {
+              alterarVisitado(index, valor);
+            },
           );
         },
       ),

@@ -1,13 +1,17 @@
 
 import 'package:flutter/material.dart';
-import '../../models/ponto_turistico.dart';
+import '../models/ponto_turistico.dart';
 
 class CardTuristico extends StatelessWidget {
   final PontoTuristico ponto;
+  final ValueChanged<bool> onFavorito;
+  final ValueChanged<bool> onVisitado;
 
   const CardTuristico({
     super.key,
     required this.ponto,
+    required this.onFavorito,
+    required this.onVisitado,
   });
 
   @override
@@ -28,6 +32,7 @@ class CardTuristico extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Imagem do ponto turístico
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(
@@ -39,7 +44,10 @@ class CardTuristico extends StatelessWidget {
                 return const SizedBox(
                   height: 160,
                   child: Center(
-                    child: Icon(Icons.broken_image, size: 50),
+                    child: Icon(
+                      Icons.broken_image,
+                      size: 50,
+                    ),
                   ),
                 );
               },
@@ -48,6 +56,7 @@ class CardTuristico extends StatelessWidget {
 
           const SizedBox(height: 10),
 
+          // Nome do ponto turístico
           Text(
             ponto.nome,
             style: const TextStyle(
@@ -56,6 +65,9 @@ class CardTuristico extends StatelessWidget {
             ),
           ),
 
+          const SizedBox(height: 4),
+
+          // Cidade
           Text(
             ponto.cidade,
             style: const TextStyle(
@@ -66,7 +78,52 @@ class CardTuristico extends StatelessWidget {
 
           const SizedBox(height: 8),
 
-          Text(ponto.descricao),
+          // Descrição
+          Text(
+            ponto.descricao,
+            style: const TextStyle(
+              fontSize: 14,
+            ),
+          ),
+
+          const SizedBox(height: 10),
+
+          // Checkboxes
+          Row(
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: ponto.favorito,
+                      onChanged: (valor) {
+                        onFavorito(valor ?? false);
+                      },
+                    ),
+                    const Flexible(
+                      child: Text('Favorito'),
+                    ),
+                  ],
+                ),
+              ),
+
+              Expanded(
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: ponto.visitado,
+                      onChanged: (valor) {
+                        onVisitado(valor ?? false);
+                      },
+                    ),
+                    const Flexible(
+                      child: Text('Visitado'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
