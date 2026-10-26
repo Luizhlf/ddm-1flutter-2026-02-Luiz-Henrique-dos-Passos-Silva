@@ -15,44 +15,58 @@ class _TelaTurismoState extends State<TelaTurismo> {
     PontoTuristico(
       nome: 'Jardim da Orla',
       cidade: 'Santos',
-      descricao: 'Jardim à beira-mar, ideal para caminhadas.',
-      imagem: 'https://picsum.photos/seed/orla/600/300',
+      descricao:
+          'Jardim à beira-mar, ideal para caminhadas e lazer.',
+      imagem:
+          'assets/imagens/Jardim da Orla.jpeg',
     ),
     PontoTuristico(
       nome: 'Museu do Café',
       cidade: 'Santos',
-      descricao: 'Museu dedicado à história do café brasileiro.',
-      imagem: 'https://picsum.photos/seed/cafe/600/300',
+      descricao:
+          'Museu dedicado à história do café brasileiro.',
+      imagem:
+          'assets/imagens/museu-do-cafe.jpg',
     ),
     PontoTuristico(
       nome: 'Aquário Municipal',
       cidade: 'Santos',
-      descricao: 'Espaço de exposição e educação sobre a vida marinha.',
-      imagem: 'https://picsum.photos/seed/aquario/600/300',
+      descricao:
+          'Espaço dedicado à vida marinha e à educação ambiental.',
+      imagem:
+          'assets/imagens/Aquario.jpeg',
     ),
     PontoTuristico(
-      nome: 'Ponte Pênsil',
+      nome: 'Ilha Porchat',
       cidade: 'São Vicente',
-      descricao: 'Ponte histórica e cartão-postal da cidade.',
-      imagem: 'https://picsum.photos/seed/ponte/600/300',
+      descricao:
+          'Local conhecido pelas belas vistas do litoral e pelo Memorial dos 500 Anos.',
+      imagem:
+          'assets/imagens/Ilha_Porchat.jpg',
     ),
     PontoTuristico(
-      nome: 'Praia do Gonzaguinha',
-      cidade: 'São Vicente',
-      descricao: 'Praia com belas paisagens e espaços de lazer.',
-      imagem: 'https://picsum.photos/seed/praia/600/300',
+      nome: 'Orquidário Municipal',
+      cidade: 'Santos',
+      descricao:
+          'Parque com diversas espécies de plantas, animais e áreas verdes.',
+      imagem:
+          'assets/imagens/Orquidário.jpeg',
     ),
     PontoTuristico(
-      nome: 'Mirante da Campina',
+      nome: 'Praia do Tombo',
       cidade: 'Guarujá',
-      descricao: 'Mirante com vista panorâmica para a Enseada.',
-      imagem: 'https://picsum.photos/seed/mirante/600/300',
+      descricao:
+          'Praia conhecida pelas ondas fortes e pela prática de surfe.',
+      imagem:
+          'assets/imagens/Praia_do_Tombo.jpg',
     ),
     PontoTuristico(
-      nome: 'Fortaleza de Itaipu',
-      cidade: 'Praia Grande',
-      descricao: 'Fortificação histórica cercada pela natureza.',
-      imagem: 'https://picsum.photos/seed/fortaleza/600/300',
+      nome: 'Parque Estadual Xixová-Japuí',
+      cidade: 'Praia Grande e São Vicente',
+      descricao:
+          'Área de preservação ambiental com Mata Atlântica e belas paisagens naturais.',
+      imagem:
+          'assets/imagens/Parque Estadual Xixová-Japuí.jpeg',
     ),
   ];
 
@@ -73,7 +87,10 @@ class _TelaTurismoState extends State<TelaTurismo> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text('Luiz Henrique dos Passos Silva'),
+        title: const Text(
+          'Luiz Henrique dos Passos Silva',
+          style: TextStyle(fontSize: 17),
+        ),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),

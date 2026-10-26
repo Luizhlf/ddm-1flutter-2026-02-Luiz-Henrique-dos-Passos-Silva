@@ -35,11 +35,12 @@ class CardTuristico extends StatelessWidget {
           // Imagem do ponto turístico
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(
+            child: Image.asset(
               ponto.imagem,
               width: double.infinity,
-              height: 160,
-              fit: BoxFit.cover,
+               height: 600,
+               fit: BoxFit.cover,
+               filterQuality: FilterQuality.high,
               errorBuilder: (context, error, stackTrace) {
                 return const SizedBox(
                   height: 160,
@@ -56,7 +57,6 @@ class CardTuristico extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          // Nome do ponto turístico
           Text(
             ponto.nome,
             style: const TextStyle(
@@ -66,8 +66,7 @@ class CardTuristico extends StatelessWidget {
           ),
 
           const SizedBox(height: 4),
-
-          // Cidade
+  
           Text(
             ponto.cidade,
             style: const TextStyle(
@@ -78,7 +77,6 @@ class CardTuristico extends StatelessWidget {
 
           const SizedBox(height: 8),
 
-          // Descrição
           Text(
             ponto.descricao,
             style: const TextStyle(
@@ -88,7 +86,6 @@ class CardTuristico extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          // Checkboxes
           Row(
             children: [
               Expanded(
